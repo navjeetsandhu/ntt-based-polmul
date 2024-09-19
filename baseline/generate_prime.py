@@ -14,7 +14,6 @@
 
 import random
 import math
-import sys
 
 def miller_rabin(p,s=11):
     #computes p-1 decomposition in 2**u*r

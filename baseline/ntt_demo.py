@@ -1,7 +1,6 @@
-from math import log
+
 from random import randint
 from generate_prime import *
-from helper import *
 from ntt import *
 
 def nett_demo():
