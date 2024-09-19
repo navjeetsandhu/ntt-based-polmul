@@ -10,8 +10,8 @@ matrix = lambda polynomial, col_length: list(zip(*[polynomial[i:i + col_length] 
 # B0,B1: output coefficients
 def CT_Butterfly(A0,A1,W,q):
     """
-    A0 -------\--|+|-- B0
-               \/
+    A0 -------\\--|+|-- B0
+               \\/
                /\
     A1 --|x|--/--|-|-- B1
     """
@@ -29,8 +29,8 @@ def CT_Butterfly(A0,A1,W,q):
 # B0,B1: output coefficients
 def GS_Butterfly(A0,A1,W,q):
     """
-    A0 --\--|+|------- B0
-          \/
+    A0 --\\--|+|------- B0
+          \\/
           /\
     A1 --/--|-|--|x|-- B1
     """
@@ -530,15 +530,15 @@ class NTT:
                       x^4 - 1                         x^4 + 1 ----------------------------- Stage #1
                          ||                              ||
                       x^4 - 1                         x^4 - w^4
-                     /  \                                   /  \
-                    /    \                                 /    \
-                   /      \                               /      \
+                     /  \\                                   /  \\
+                    /    \\                                 /    \\
+                   /      \\                               /      \\
             x^2 - 1        x^2 + 1               x^2 - w^2        x^2 + w^2 --------------- Stage #2
                ||             ||                     ||               ||
             x^2 - 1       x^2 - w^4              x^2 - w^2        x^2 - w^6
-           / \               / \                   / \               / \
-          /   \             /   \                 /   \             /   \
-         /     \           /     \               /     \           /     \
+           / \\               / \\                   / \\               / \\
+          /   \\             /   \\                 /   \\             /   \\
+         /     \\           /     \\               /     \\           /     \\
     x - 1     x + 1   x - w^2   x + w^2       x - w   x + w   x - w^3   x + w^3 ----------- Stage #3
       ||        ||       ||       ||            ||      ||       ||       ||
     x - 1    x - w^4  x - w^2   x - w^6      x - w   x - w^5  x - w^3   x - w^7
